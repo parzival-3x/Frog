@@ -22,7 +22,8 @@ public class DiceScript : MonoBehaviour {
 			float dirX = Random.Range (0, 500);
 			float dirY = Random.Range (0, 500);
 			float dirZ = Random.Range (0, 500);
-			transform.position = new Vector3 (0, 5, 0);
+			Debug.Log(dirX + " " + dirY + " " + dirZ);
+			transform.position = new Vector3 (x, 5, 0);
 			transform.rotation = Quaternion.identity;
 			rb.AddForce (transform.up * 500);
 			rb.AddTorque (dirX, dirY, dirZ);

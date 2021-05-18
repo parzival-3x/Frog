@@ -36,5 +36,6 @@ public class DiceCheckZoneScript : MonoBehaviour {
 				break;
 			}
 		}
+		GetComponent<DiceCheckZoneScript>().enabled = false;
 	}
 }

@@ -8,6 +8,7 @@ public class DiceNumberTextScript : MonoBehaviour {
 
 	public TextMeshProUGUI Scoretext;
 	public static int diceNumber;
+	private ArrayList array = new ArrayList();
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +17,16 @@ public class DiceNumberTextScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		Scoretext.text ="Your Score: "+ diceNumber.ToString();
+        if (diceNumber != 0)
+        {
+			array.Add(diceNumber);
+			diceNumber = 0;
+			Debug.Log(array.Count);
+		}
+		//Scoretext.text ="Your Score: "+ diceNumber.ToString();
 	}
+	void DisplayScore()
+    {
+
+    }
 }

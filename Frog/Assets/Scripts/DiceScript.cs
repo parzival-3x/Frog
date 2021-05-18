@@ -6,6 +6,7 @@ public class DiceScript : MonoBehaviour {
 
 	static Rigidbody rb;
 	public static Vector3 diceVelocity;
+	public float x;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,8 @@ public class DiceScript : MonoBehaviour {
 			float dirX = Random.Range (0, 500);
 			float dirY = Random.Range (0, 500);
 			float dirZ = Random.Range (0, 500);
-			transform.position = new Vector3 (0, 2, 0);
+			Debug.Log(dirX + " " + dirY + " " + dirZ);
+			transform.position = new Vector3 (0, 5, 0);
 			transform.rotation = Quaternion.identity;
 			rb.AddForce (transform.up * 500);
 			rb.AddTorque (dirX, dirY, dirZ);

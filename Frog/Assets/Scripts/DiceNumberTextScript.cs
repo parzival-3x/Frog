@@ -32,7 +32,7 @@ public class DiceNumberTextScript : MonoBehaviour {
 		}*/
         if (count > 4)
         {
-			Debug.Log(array[0]+" "+ array[1] + " " + array[2] + " " + array[3] + " " + array[4] + " ");
+			//Debug.Log(array[0]+" "+ array[1] + " " + array[2] + " " + array[3] + " " + array[4] + " ");
 			//array.Clear();
         }
 		//Scoretext.text ="Your Score: "+ diceNumber.ToString();

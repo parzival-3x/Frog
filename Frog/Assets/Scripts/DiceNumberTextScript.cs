@@ -9,12 +9,13 @@ public class DiceNumberTextScript : MonoBehaviour {
 	public TextMeshProUGUI Scoretext;
 	public static int diceNumber;
 	public static int[] array;
-	private static int count;
+	public static int count;
 
 	// Use this for initialization
 	void Start () {
 		Scoretext.text = "Your Score: ";
 		array = new int[5];
+		count = 0;
 	}
 	
 	// Update is called once per frame

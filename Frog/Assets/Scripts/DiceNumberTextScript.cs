@@ -8,30 +8,31 @@ public class DiceNumberTextScript : MonoBehaviour {
 
 	public TextMeshProUGUI Scoretext;
 	public static int diceNumber;
-	private ArrayList array = new ArrayList();
+	public static int[] array;
+	private static int count;
 
 	// Use this for initialization
 	void Start () {
 		Scoretext.text = "Your Score: ";
-		array.Clear();
+		array = new int[5];
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Space))
         {
-			array.Clear();
+			array = new int[5];
         }
-			if (diceNumber != 0)
+		/*if (diceNumber != 0)
         {
 			array.Add(diceNumber);
 			diceNumber = 0;
 			Debug.Log(array.Count);
-		}
-        if (array.Count > 4)
+		}*/
+        if (count > 4)
         {
 			Debug.Log(array[0]+" "+ array[1] + " " + array[2] + " " + array[3] + " " + array[4] + " ");
-			array.Clear();
+			//array.Clear();
         }
 		//Scoretext.text ="Your Score: "+ diceNumber.ToString();
 	}

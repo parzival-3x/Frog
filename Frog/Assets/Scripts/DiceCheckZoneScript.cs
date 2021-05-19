@@ -13,11 +13,31 @@ public class DiceCheckZoneScript : MonoBehaviour {
 
 	void OnTriggerStay(Collider col)
 	{
+		string index = col.gameObject.tag;
+		int where = 0;
+        switch (index)
+        {
+			case "one":
+				where = 0;
+				break;
+			case "two":
+				where = 1;
+				break;
+			case "three":
+				where = 2;
+				break;
+			case "four":
+				where = 3;
+				break;
+			case "five":
+				where = 4;
+				break;
+        }
 		if (diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f)
 		{
 			switch (col.gameObject.name) {
 			case "Side1":
-				DiceNumberTextScript.diceNumber = 6;
+				DiceNumberTextScript.array = 6;
 				break;
 			case "Side2":
 				DiceNumberTextScript.diceNumber = 5;

@@ -7,6 +7,8 @@ public class DiceScript : MonoBehaviour {
 	static Rigidbody rb;
 	public static Vector3 diceVelocity;
 	public float x;
+	public static bool isStill;
+	private bool gameStarted = false;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +18,10 @@ public class DiceScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		diceVelocity = rb.velocity;
+		isStill = diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f && gameStarted;
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
+			gameStarted = true;
 			GetComponent<DiceCheckZoneScript>().enabled = true;
 			DiceNumberTextScript.diceNumber = 0;
 			float dirX = Random.Range (0, 500);

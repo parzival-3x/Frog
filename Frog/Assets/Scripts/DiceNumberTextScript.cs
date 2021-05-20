@@ -20,11 +20,11 @@ public class DiceNumberTextScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Space))
+		/*if (Input.GetKeyDown(KeyCode.Space))
         {
 			array = new int[5];
         }
-		/*if (diceNumber != 0)
+		if (diceNumber != 0)
         {
 			array.Add(diceNumber);
 			diceNumber = 0;

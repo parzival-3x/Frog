@@ -7,7 +7,7 @@ public class DiceScript : MonoBehaviour {
 	static Rigidbody rb;
 	public static Vector3 diceVelocity;
 	public float x;
-	public static bool isStill;
+	public bool isStill;
 	private bool gameStarted = false;
 
 	// Use this for initialization

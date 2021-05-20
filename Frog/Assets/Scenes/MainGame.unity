@@ -3551,6 +3551,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scoretext: {fileID: 1963072076}
+  one: {fileID: 1070622712}
+  two: {fileID: 1864173951}
+  three: {fileID: 1195292577}
+  four: {fileID: 1129143433}
+  five: {fileID: 1091102523}
 --- !u!1 &1993921198
 GameObject:
   m_ObjectHideFlags: 0

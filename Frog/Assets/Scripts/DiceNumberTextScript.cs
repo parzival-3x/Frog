@@ -15,12 +15,16 @@ public class DiceNumberTextScript : MonoBehaviour {
 	public GameObject three;
 	public GameObject four;
 	public GameObject five;
+	private int score;
+	public static bool check;
 
 	// Use this for initialization
 	void Start () {
 		Scoretext.text = "Your Score: ";
 		array = new int[5];
 		count = 0;
+		score = 0;
+		check = true;
 	}
 	
 	// Update is called once per frame
@@ -39,8 +43,11 @@ public class DiceNumberTextScript : MonoBehaviour {
         {
 			if(one.GetComponent<DiceScript>().isStill&& two.GetComponent<DiceScript>().isStill&& three.GetComponent<DiceScript>().isStill&&four.GetComponent<DiceScript>().isStill&& five.GetComponent<DiceScript>().isStill)
             {
-				DisplayScore();
-            }
+				if (check)
+				{
+					DisplayScore();
+				}
+			}
 			//Debug.Log(array[0]+" "+ array[1] + " " + array[2] + " " + array[3] + " " + array[4] + " ");
 			//array.Clear();
         }
@@ -48,7 +55,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 	}
 	void DisplayScore()
     {
-		int score = 0;
 		foreach(int i in array)
         {
 			if (i == 1)
@@ -57,5 +63,6 @@ public class DiceNumberTextScript : MonoBehaviour {
 				score += 50;
         }
 		Scoretext.text = "Your score: "+score.ToString();
+		check = false;
     }
 }

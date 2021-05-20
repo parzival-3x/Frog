@@ -8,7 +8,7 @@ public class DiceScript : MonoBehaviour {
 	public static Vector3 diceVelocity;
 	public float x;
 	public bool isStill;
-	private bool gameStarted = false;
+	private bool gameStarted = false;//does the placement matter?
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +24,7 @@ public class DiceScript : MonoBehaviour {
 			DiceNumberTextScript.array= new int[5];
 			gameStarted = true;
 			GetComponent<DiceCheckZoneScript>().enabled = true;
+			DiceNumberTextScript.check = true;
 			DiceNumberTextScript.diceNumber = 0;
 			float dirX = Random.Range (0, 500);
 			float dirY = Random.Range (0, 500);

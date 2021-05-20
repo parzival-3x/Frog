@@ -21,7 +21,7 @@ public class DiceScript : MonoBehaviour {
 		isStill = diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f && gameStarted;
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			DiceNumberTextScript.array= array = new int[5];
+			DiceNumberTextScript.array= new int[5];
 			gameStarted = true;
 			GetComponent<DiceCheckZoneScript>().enabled = true;
 			DiceNumberTextScript.diceNumber = 0;

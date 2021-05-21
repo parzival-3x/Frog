@@ -5,10 +5,15 @@ using UnityEngine;
 public class DiceCheckZoneScript : MonoBehaviour {
 
 	Vector3 diceVelocity;
-
+	//add a state to this script and update it in the switch 
+	public bool changed = false;
 	// Update is called once per frame
-	void FixedUpdate () {
-		diceVelocity = DiceScript.diceVelocity;
+	void Update () {
+		diceVelocity = GetComponent<DiceScript>().diceVelocity;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+			changed = false;
+        }
 	}
 
 	void OnTriggerStay(Collider col)
@@ -33,7 +38,7 @@ public class DiceCheckZoneScript : MonoBehaviour {
 				where = 4;
 				break;
         }
-		if (diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f)
+		if (diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f&&!changed)//ismoving could work here
 		{
 			DiceNumberTextScript.count++;
 			switch (col.gameObject.name) {
@@ -56,7 +61,8 @@ public class DiceCheckZoneScript : MonoBehaviour {
 				DiceNumberTextScript.array[where] = 1;
 				break;
 			}
-			GetComponent<DiceCheckZoneScript>().enabled = false;
+			changed = true;
+			//GetComponent<DiceCheckZoneScript>().enabled = false;
 		}
 	}
 }

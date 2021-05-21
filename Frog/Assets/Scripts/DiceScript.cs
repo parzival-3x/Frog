@@ -5,7 +5,7 @@ using UnityEngine;
 public class DiceScript : MonoBehaviour {
 
 	static Rigidbody rb;
-	public static Vector3 diceVelocity;
+	public Vector3 diceVelocity;
 	public float x;
 	public bool isStill;
 	private bool gameStarted = false;//does the placement matter?

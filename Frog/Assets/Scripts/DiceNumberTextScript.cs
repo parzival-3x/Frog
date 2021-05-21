@@ -24,7 +24,7 @@ public class DiceNumberTextScript : MonoBehaviour {
 		array = new int[5];
 		count = 0;
 		score = 0;
-		check = true;
+		check = false;
 	}
 	
 	// Update is called once per frame
@@ -39,7 +39,11 @@ public class DiceNumberTextScript : MonoBehaviour {
 			diceNumber = 0;
 			Debug.Log(array.Count);
 		}*/
-		Debug.Log(check);
+		/*if (check)
+		{
+			Debug.Log(check);
+		}*/
+		Debug.Log(count);
         if (count > 4)
         {
 			if(one.GetComponent<DiceScript>().notMoving&& two.GetComponent<DiceScript>().notMoving&& three.GetComponent<DiceScript>().notMoving&&four.GetComponent<DiceScript>().notMoving&& five.GetComponent<DiceScript>().notMoving)
@@ -64,6 +68,7 @@ public class DiceNumberTextScript : MonoBehaviour {
 				score += 50;
         }
 		Scoretext.text = "Your score: "+score.ToString();
+		count = 0;
 		check = false;
     }
 }

@@ -21,10 +21,10 @@ public class DiceScript : MonoBehaviour {
 		isStill = diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f && gameStarted;
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
+			DiceNumberTextScript.check = true;
 			DiceNumberTextScript.array= new int[5];
 			gameStarted = true;
 			GetComponent<DiceCheckZoneScript>().enabled = true;
-			DiceNumberTextScript.check = true;
 			DiceNumberTextScript.diceNumber = 0;
 			float dirX = Random.Range (0, 500);
 			float dirY = Random.Range (0, 500);

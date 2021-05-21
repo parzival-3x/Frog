@@ -28,7 +28,7 @@ public class DiceNumberTextScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 		/*if (Input.GetKeyDown(KeyCode.Space))
         {
 			array = new int[5];

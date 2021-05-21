@@ -9,17 +9,24 @@ public class DiceScript : MonoBehaviour {
 	public float x;
 	public bool isStill;
 	private bool gameStarted = false;//does the placement matter?
+	public bool isStop;
+	private Vector3 lastV;
+	public bool notMoving;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
+		lastV = rb.velocity;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		diceVelocity = rb.velocity;
+		Vector3 accel = (diceVelocity - lastV) / Time.deltaTime;
+		lastV = diceVelocity;
+		isStop = accel.x == 0f && accel.y == 0f && accel.z == 0f && gameStarted;
 		isStill = diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f && gameStarted;
-
+		notMoving = isStill && isStop;
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			DiceNumberTextScript.check = true;
 			DiceNumberTextScript.array= new int[5];

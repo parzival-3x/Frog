@@ -39,9 +39,10 @@ public class DiceNumberTextScript : MonoBehaviour {
 			diceNumber = 0;
 			Debug.Log(array.Count);
 		}*/
+		Debug.Log(check);
         if (count > 4)
         {
-			if(one.GetComponent<DiceScript>().isStill&& two.GetComponent<DiceScript>().isStill&& three.GetComponent<DiceScript>().isStill&&four.GetComponent<DiceScript>().isStill&& five.GetComponent<DiceScript>().isStill)
+			if(one.GetComponent<DiceScript>().notMoving&& two.GetComponent<DiceScript>().notMoving&& three.GetComponent<DiceScript>().notMoving&&four.GetComponent<DiceScript>().notMoving&& five.GetComponent<DiceScript>().notMoving)
             {
 				if (check)
 				{
